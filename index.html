@@ -8,5 +8,35 @@
 
 	<body>
 		<h1>JS a sketch</h1>
+		<button id="clear">Clear</button>
+		<div id="canvas">
+
+
+		</div>
+
+		<script>
+			let canvasDiv = document.getElementById('canvas');
+
+			function grid() {
+
+				for (let n = 256; n>0; n--) {
+					let createDiv = document.createElement('div');
+					createDiv.style.backgroundColor = "";
+					createDiv.style.width = "1fr";
+					createDiv.style.height = "1fr";
+					createDiv.addEventListener('mouseenter', function() {
+						event.target.style.backgroundColor = "black"
+					})
+					canvasDiv.appendChild(createDiv);
+				}
+			}
+
+			
+
+			let clearBtn = document.getElementById('clear');
+
+			clearBtn.addEventListener("click", grid);
+			
+		</script>
 	</body>
 </html>

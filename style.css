@@ -1,3 +1,26 @@
 h1 {
 	text-align: center;
 }
+
+button {
+	height: 6vh;
+	width: 10vw;
+	margin-left: 1vw;
+	background: linear-gradient(45deg, rgb(252, 50, 71), rgb(255,255,255), rgb(50, 134, 252));
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+#canvas {
+	width: 70vh;
+	height: 70vh;
+	border: 2px solid black;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-rows: repeat(16, 1fr);
+}
+
+#canvas div {
+}
