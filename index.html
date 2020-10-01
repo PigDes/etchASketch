@@ -17,13 +17,21 @@
 		<script>
 			let canvasDiv = document.getElementById('canvas');
 
-			function grid() {
+			function grid(a = 16) {
 
-				for (let n = 256; n>0; n--) {
+				canvasDiv.innerHTML = "";
+				canvasDiv.style.gridTemplateColumns = `repeat(${a}, 1fr)`;
+				canvasDiv.style.gridTemplateRows = `repeat(${a}, 1fr)`;
+
+				let n = a**2;
+
+				for (n; n>0; n--) {
 					let createDiv = document.createElement('div');
+
 					createDiv.style.backgroundColor = "";
 					createDiv.style.width = "1fr";
 					createDiv.style.height = "1fr";
+
 					createDiv.addEventListener('mouseenter', function() {
 						event.target.style.backgroundColor = "black"
 					})
@@ -31,11 +39,16 @@
 				}
 			}
 
-			
+			grid();
+
+			function makeNewGrid () {
+				let sideSize = prompt("This will erase the sketchpad. If you are sure you wish to continue, input the number of the squares per side in new grid (default is 16) and confirm.", "16")
+				grid(sideSize);
+			}
 
 			let clearBtn = document.getElementById('clear');
 
-			clearBtn.addEventListener("click", grid);
+			clearBtn.addEventListener("click", makeNewGrid);
 			
 		</script>
 	</body>
