@@ -17,6 +17,10 @@
 		<script>
 			let canvasDiv = document.getElementById('canvas');
 
+			function rgbValue () {
+				return (Math.random()*255).toFixed(0);
+			}
+
 			function grid(a = 16) {
 
 				canvasDiv.innerHTML = "";
@@ -24,6 +28,7 @@
 				canvasDiv.style.gridTemplateRows = `repeat(${a}, 1fr)`;
 
 				let n = a**2;
+
 
 				for (n; n>0; n--) {
 					let createDiv = document.createElement('div');
@@ -33,7 +38,7 @@
 					createDiv.style.height = "1fr";
 
 					createDiv.addEventListener('mouseenter', function() {
-						event.target.style.backgroundColor = "black"
+						event.target.style.backgroundColor = `rgb(${rgbValue()},${rgbValue()},${rgbValue()})`;
 					})
 					canvasDiv.appendChild(createDiv);
 				}
